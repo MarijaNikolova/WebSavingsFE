@@ -3,6 +3,7 @@ import { checkError } from './fetchutils';
 const request = (url, params = {}, method = 'GET') => {
   let options = {
     method,
+    headers: new Headers({ 'content-type': 'application/json' }),
   };
   if ('GET' === method) {
     url += '?' + new URLSearchParams(params).toString();
@@ -14,4 +15,4 @@ const request = (url, params = {}, method = 'GET') => {
 };
 
 export const get = (url, params) => request(url, params, 'GET');
-export const post = (url, params) => request(url, params, 'POST');
+export const put = (url, params) => request(url, params, 'PUT');
