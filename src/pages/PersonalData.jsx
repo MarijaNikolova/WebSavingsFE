@@ -6,7 +6,6 @@ import { Field, Form as FinalForm } from 'react-final-form';
 import { Alert, Button, Card } from 'react-bootstrap';
 import { StyledFieldHolder, StyledFormContainer, StyledSubmitButtonContainer } from '../styles';
 import { useHistory } from 'react-router-dom';
-import data from 'bootstrap/js/src/dom/data';
 
 const PersonalData = () => {
   const { email, password, customerId } = useContext(ApplicationContext);
@@ -14,6 +13,12 @@ const PersonalData = () => {
   const [clientData, setClientData] = useState({});
   const [configData, setConfigData] = useState({});
   const [saveSuccessful, setSaveSuccessful] = useState(false);
+
+  const history = useHistory();
+
+  if (!email && !password && !customerId) {
+    history.push('not-logged-in');
+  }
 
   React.useEffect(() => {
     const fetchData = () => {
@@ -27,7 +32,6 @@ const PersonalData = () => {
   }, [email, password]);
 
   console.log(clientData, configData);
-  const history = useHistory();
 
   return (
     <FinalForm

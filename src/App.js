@@ -15,6 +15,7 @@ import Accounts from './pages/Accounts';
 import Projection from './pages/Projection';
 import { useState } from 'react';
 import { ApplicationContext } from './context';
+import NotLoggedIn from './pages/NotLoggedIn';
 
 function App() {
   const [email, setEmail] = useState('');
@@ -52,6 +53,9 @@ function App() {
             </Route>
             <Route path="/projection">
               <Projection />
+            </Route>
+            <Route path="/not-logged-in">
+              <NotLoggedIn />
             </Route>
           </Switch>
         </BrowserRouter>

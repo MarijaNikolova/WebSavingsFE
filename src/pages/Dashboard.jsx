@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import Alert from 'react-bootstrap/Alert';
 import { Card, Button, Image } from 'react-bootstrap';
 import { useQuery } from '../utils/routerutil';
+import { ApplicationContext } from '../context';
 
 const StyledContainer = styled.div`
   display: flex;
@@ -24,13 +25,17 @@ const StyledRowContainer = styled.div`
 `;
 
 const Dashboard = () => {
-  const query = useQuery();
+  const { email, password, customerId } = useContext(ApplicationContext);
 
   const history = useHistory();
 
   const redirectToUrl = (url) => {
     history.push(url);
   };
+
+  if (!email && !password && !customerId) {
+    redirectToUrl('not-logged-in');
+  }
 
   return (
     <StyledContainer>
