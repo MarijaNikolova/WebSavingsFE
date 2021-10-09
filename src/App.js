@@ -2,36 +2,32 @@ import './App.css';
 import Alert from 'react-bootstrap/Alert';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Row } from 'react-bootstrap';
-import LoginForm from './LoginForm';
+import LoginForm from './pages/LoginForm';
 import styled from 'styled-components';
-
-const StyledContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-top: 30px;
-  margin-left: 40px;
-  margin-right: 40px;
-  margin-bottom: 20px;
-`;
+import SignUpForm from './pages/SignUpForm';
+import Dashboard from './pages/Dashboard';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Home from './pages/Home';
 
 function App() {
   return (
     <div className="App">
-      <StyledContainer>
-        <Row>
-          <Col>
-            {' '}
-            <Alert variant="primary">Welcome to the web savings calculator! Please login / sign up to continue !</Alert>
-          </Col>
-        </Row>
-        <Row>
-          <Col />
-          <Col>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/sign-up">
+            <SignUpForm />
+          </Route>
+          <Route path="/dashboard">
+            <Dashboard />
+          </Route>
+          <Route path="/login">
             <LoginForm />
-          </Col>
-          <Col />
-        </Row>
-      </StyledContainer>
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
