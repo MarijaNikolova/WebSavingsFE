@@ -13,42 +13,50 @@ import CashFlows from './pages/CashFlows';
 import Goals from './pages/Goals';
 import Accounts from './pages/Accounts';
 import Projection from './pages/Projection';
+import { useState } from 'react';
+import { ApplicationContext } from './context';
 
 function App() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [customerId, setCustomerId] = useState('');
+  const value = { email, setEmail, password, setPassword, customerId, setCustomerId };
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/sign-up">
-            <SignUpForm />
-          </Route>
-          <Route path="/dashboard">
-            <Dashboard />
-          </Route>
-          <Route path="/login">
-            <LoginForm />
-          </Route>
-          <Route path="/personal-data">
-            <PersonalData />
-          </Route>
-          <Route path="/cashflows">
-            <CashFlows />
-          </Route>
-          <Route path="/goals">
-            <Goals />
-          </Route>
-          <Route path="/accounts">
-            <Accounts />
-          </Route>
-          <Route path="/projection">
-            <Projection />
-          </Route>
-        </Switch>
-      </BrowserRouter>
-    </div>
+    <ApplicationContext.Provider value={value}>
+      <div className="App">
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/sign-up">
+              <SignUpForm />
+            </Route>
+            <Route path="/dashboard">
+              <Dashboard />
+            </Route>
+            <Route path="/login">
+              <LoginForm />
+            </Route>
+            <Route path="/personal-data">
+              <PersonalData />
+            </Route>
+            <Route path="/cashflows">
+              <CashFlows />
+            </Route>
+            <Route path="/goals">
+              <Goals />
+            </Route>
+            <Route path="/accounts">
+              <Accounts />
+            </Route>
+            <Route path="/projection">
+              <Projection />
+            </Route>
+          </Switch>
+        </BrowserRouter>
+      </div>
+    </ApplicationContext.Provider>
   );
 }
 

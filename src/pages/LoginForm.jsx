@@ -5,6 +5,8 @@ import { StyledInput } from '../styles';
 import { get } from '../utils/httputil';
 import { ENDPOINT_URL } from '../constants';
 import { useHistory } from 'react-router-dom';
+import { useContext } from 'react';
+import { ApplicationContext } from '../context';
 
 const StyledFormContainer = styled.div`
   display: flex;
@@ -25,6 +27,7 @@ const StyledSubmitButtonContainer = styled.div`
 
 const LoginForm = () => {
   const history = useHistory();
+  const { setEmail, setPassword, setCustomerId } = useContext(ApplicationContext);
   return (
     <FinalForm
       onSubmit={(values) => {
@@ -35,7 +38,10 @@ const LoginForm = () => {
         })
           .then((result) => {
             const { id } = result;
-            history.push('/dashboard?customerId=' + id);
+            setEmail(values.email);
+            setPassword(values.password);
+            setCustomerId(id);
+            history.push('/dashboard');
           })
           .catch((reason) => alert('Something went wrong. Please check your credentials.'));
       }}

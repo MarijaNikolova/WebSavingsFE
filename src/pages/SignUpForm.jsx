@@ -12,7 +12,7 @@ const SignUpForm = () => {
     <FinalForm
       onSubmit={(values) => {
         console.log(values);
-        put(ENDPOINT_URL + 'customer', values).then((result) => {
+        put(ENDPOINT_URL + 'customer', {}, values).then((result) => {
           console.log("you're signed up");
           alert("You're signed up. Redirecting you to login page");
           history.push('/?signUp=true');

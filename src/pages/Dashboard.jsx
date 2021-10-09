@@ -25,12 +25,11 @@ const StyledRowContainer = styled.div`
 
 const Dashboard = () => {
   const query = useQuery();
-  const customerId = query.get('customerId');
 
   const history = useHistory();
 
   const redirectToUrl = (url) => {
-    history.push(`${url}?customerId=${customerId}`);
+    history.push(url);
   };
 
   return (
