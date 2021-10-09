@@ -8,6 +8,11 @@ import SignUpForm from './pages/SignUpForm';
 import Dashboard from './pages/Dashboard';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
+import PersonalData from './pages/PersonalData';
+import CashFlows from './pages/CashFlows';
+import Goals from './pages/Goals';
+import Accounts from './pages/Accounts';
+import Projection from './pages/Projection';
 
 function App() {
   return (
@@ -25,6 +30,21 @@ function App() {
           </Route>
           <Route path="/login">
             <LoginForm />
+          </Route>
+          <Route path="/personal-data">
+            <PersonalData />
+          </Route>
+          <Route path="/cashflows">
+            <CashFlows />
+          </Route>
+          <Route path="/goals">
+            <Goals />
+          </Route>
+          <Route path="/accounts">
+            <Accounts />
+          </Route>
+          <Route path="/projection">
+            <Projection />
           </Route>
         </Switch>
       </BrowserRouter>

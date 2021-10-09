@@ -33,7 +33,10 @@ const LoginForm = () => {
           customerEmail: values.email,
           customerPassword: values.password,
         })
-          .then((result) => history.push('/dashboard'))
+          .then((result) => {
+            const { id } = result;
+            history.push('/dashboard?customerId=' + id);
+          })
           .catch((reason) => alert('Something went wrong. Please check your credentials.'));
       }}
       validate={() => {}}
