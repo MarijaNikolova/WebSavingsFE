@@ -20,6 +20,8 @@ import AccountEdit from './components/AccountEdit';
 import AccountNew from './components/AccountNew';
 import GoalNew from './components/goals/GoalNew';
 import GoalEdit from './components/goals/GoalEdit';
+import CashFlowNew from './components/cashflows/CashFlowNew';
+import CashFlowEdit from './components/cashflows/CashFlowEdit';
 
 function App() {
   const [email, setEmail] = useState('');
@@ -72,6 +74,12 @@ function App() {
             </Route>
             <Route path="/goal-edit">
               <GoalEdit />
+            </Route>
+            <Route path="/cashflow-new">
+              <CashFlowNew />
+            </Route>
+            <Route path="/cashflow-edit">
+              <CashFlowEdit />
             </Route>
           </Switch>
         </BrowserRouter>
