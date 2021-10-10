@@ -17,6 +17,7 @@ import { useState } from 'react';
 import { ApplicationContext } from './context';
 import NotLoggedIn from './pages/NotLoggedIn';
 import AccountEdit from './components/AccountEdit';
+import AccountNew from './components/AccountNew';
 
 function App() {
   const [email, setEmail] = useState('');
@@ -60,6 +61,9 @@ function App() {
             </Route>
             <Route path="/account-edit">
               <AccountEdit />
+            </Route>
+            <Route path="/account-new">
+              <AccountNew />
             </Route>
           </Switch>
         </BrowserRouter>

@@ -42,13 +42,22 @@ const Accounts = () => {
     <StyledContainer>
       <Alert>Add, update or delete your accounts. </Alert>{' '}
       <StyledAccountsContainer>{accountsList}</StyledAccountsContainer>
-      <Button
-        style={{ marginLeft: '10px', width: '200px' }}
-        variant="secondary"
-        onClick={() => history.push('/dashboard')}
-      >
-        Back to dashboard
-      </Button>
+      <div>
+        <Button
+          style={{ marginLeft: '10px', width: '200px' }}
+          variant="info"
+          onClick={() => history.push('/account-new')}
+        >
+          Add new account
+        </Button>
+        <Button
+          style={{ marginLeft: '10px', width: '200px' }}
+          variant="secondary"
+          onClick={() => history.push('/dashboard')}
+        >
+          Back to dashboard
+        </Button>
+      </div>
     </StyledContainer>
   );
 };
