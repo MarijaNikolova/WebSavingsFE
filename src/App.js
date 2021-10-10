@@ -22,6 +22,7 @@ import GoalNew from './components/goals/GoalNew';
 import GoalEdit from './components/goals/GoalEdit';
 import CashFlowNew from './components/cashflows/CashFlowNew';
 import CashFlowEdit from './components/cashflows/CashFlowEdit';
+import PageNotFound from './pages/PageNotFound';
 
 function App() {
   const [email, setEmail] = useState('');
@@ -80,6 +81,9 @@ function App() {
             </Route>
             <Route path="/cashflow-edit">
               <CashFlowEdit />
+            </Route>
+            <Route>
+              <PageNotFound />
             </Route>
           </Switch>
         </BrowserRouter>
