@@ -19,6 +19,7 @@ import NotLoggedIn from './pages/NotLoggedIn';
 import AccountEdit from './components/AccountEdit';
 import AccountNew from './components/AccountNew';
 import GoalNew from './components/goals/GoalNew';
+import GoalEdit from './components/goals/GoalEdit';
 
 function App() {
   const [email, setEmail] = useState('');
@@ -68,6 +69,9 @@ function App() {
             </Route>
             <Route path="/goal-new">
               <GoalNew />
+            </Route>
+            <Route path="/goal-edit">
+              <GoalEdit />
             </Route>
           </Switch>
         </BrowserRouter>
