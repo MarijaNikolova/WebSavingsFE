@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { ApplicationContext } from '../../context';
 import { Field, Form as FinalForm } from 'react-final-form';
-import { put } from '../../utils/httputil';
+import { post, put } from '../../utils/httputil';
 import { ENDPOINT_URL } from '../../constants';
 import { Button, Card } from 'react-bootstrap';
 import {
@@ -61,6 +61,18 @@ const GoalEdit = (props) => {
           </StyledAccountEditFormContainer>
           <StyledSubmitButtonContainer>
             <Button type="submit">Submit</Button>
+            <Button
+              style={{ marginLeft: '10px' }}
+              variant="danger"
+              onClick={() => {
+                post(ENDPOINT_URL + 'goals', { id: goal.id }).then((r) => {
+                  handleEditModeChange(false);
+                  handleRefetch(true);
+                });
+              }}
+            >
+              Delete
+            </Button>
             <Button variant="secondary" style={{ marginLeft: '10px' }} onClick={() => history.push('/goals')}>
               Cancel
             </Button>
