@@ -3,15 +3,8 @@ import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import Alert from 'react-bootstrap/Alert';
 import { Card, Button, Image } from 'react-bootstrap';
-import { useQuery } from '../utils/routerutil';
 import { ApplicationContext } from '../context';
-
-const StyledContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 50px;
-  width: 1260px;
-`;
+import { StyledContainer } from '../styles';
 
 const StyledContentContainer = styled.div`
   display: flex;

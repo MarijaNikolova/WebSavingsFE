@@ -16,6 +16,7 @@ import Projection from './pages/Projection';
 import { useState } from 'react';
 import { ApplicationContext } from './context';
 import NotLoggedIn from './pages/NotLoggedIn';
+import AccountEdit from './components/AccountEdit';
 
 function App() {
   const [email, setEmail] = useState('');
@@ -56,6 +57,9 @@ function App() {
             </Route>
             <Route path="/not-logged-in">
               <NotLoggedIn />
+            </Route>
+            <Route path="/account-edit">
+              <AccountEdit />
             </Route>
           </Switch>
         </BrowserRouter>
