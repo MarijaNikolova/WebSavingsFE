@@ -18,6 +18,7 @@ import { ApplicationContext } from './context';
 import NotLoggedIn from './pages/NotLoggedIn';
 import AccountEdit from './components/AccountEdit';
 import AccountNew from './components/AccountNew';
+import GoalNew from './components/goals/GoalNew';
 
 function App() {
   const [email, setEmail] = useState('');
@@ -64,6 +65,9 @@ function App() {
             </Route>
             <Route path="/account-new">
               <AccountNew />
+            </Route>
+            <Route path="/goal-new">
+              <GoalNew />
             </Route>
           </Switch>
         </BrowserRouter>

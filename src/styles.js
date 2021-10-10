@@ -38,6 +38,7 @@ export const StyledAccountsContainer = styled.div`
 export const StyledAccountEditFormContainer = styled.div`
   display: flex;
   width: 300px;
+  margin-left: 20px;
 `;
 
 export const StyledAccountFormColumn = styled.div`
