@@ -17,3 +17,4 @@ const request = (url, params = {}, method = 'GET', body = {}) => {
 
 export const get = (url, params) => request(url, params, 'GET');
 export const put = (url, params, body) => request(url, params, 'PUT', body);
+export const post = (url, params, body) => request(url, params, 'POST', body);
