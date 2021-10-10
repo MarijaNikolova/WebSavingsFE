@@ -5,7 +5,7 @@ import { ApplicationContext } from '../context';
 import { useHistory } from 'react-router-dom';
 import { get } from '../utils/httputil';
 import { ENDPOINT_URL } from '../constants';
-import Account from '../components/Account';
+import Account from '../components/accounts/Account';
 
 const Accounts = () => {
   const { email, password, customerId } = useContext(ApplicationContext);

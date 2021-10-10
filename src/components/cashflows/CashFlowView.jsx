@@ -7,7 +7,7 @@ const CashFlowView = (props) => {
   return (
     <div>
       <Card.Title>{cashflow?.description}</Card.Title>
-      <img alt="bank" height="100px" width="100px" src="goal.png" />
+      <img alt="bank" height="100px" width="100px" src="cashflows.png" />
       <Card.Body>
         <div>Value: {`${cashflow?.value} ${cashflow?.currency}`}</div>
         {cashflow?.dateFrom && <div>From: {cashflow?.dateFrom}</div>}

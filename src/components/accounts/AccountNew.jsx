@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { get, put } from '../utils/httputil';
-import { ENDPOINT_URL } from '../constants';
+import { get, put } from '../../utils/httputil';
+import { ENDPOINT_URL } from '../../constants';
 import { Field, Form as FinalForm } from 'react-final-form';
 import { Button, Card } from 'react-bootstrap';
 import {
@@ -8,8 +8,8 @@ import {
   StyledAccountFieldTitle,
   StyledAccountFormColumn,
   StyledSubmitButtonContainer,
-} from '../styles';
-import { ApplicationContext } from '../context';
+} from '../../styles';
+import { ApplicationContext } from '../../context';
 import { useHistory } from 'react-router-dom';
 
 const AccountNew = (props) => {
